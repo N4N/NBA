@@ -51,6 +51,10 @@ namespace NBA.Controllers
             return View();
         }
 
+        public ActionResult Tables3()
+        {
+            return View();
+        }
 
 
     }

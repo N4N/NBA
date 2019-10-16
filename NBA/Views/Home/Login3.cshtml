@@ -46,14 +46,14 @@
                                                 <label class="custom-control-label" for="customCheck">Remember Me</label>
                                             </div>
                                         </div>
-                                        @Html.ActionLink("Loogin", "Index3", "Home", new { @class = "btn btn-primary btn-user btn-block" })
+                                        @Html.ActionLink("Looogin", "Index3", "Home", new { @class = "btn btn-primary btn-user btn-block" })
+
                                         <a href="index.html" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                         <hr>
-                                        @Html.ActionLink("Loogin with Google", "Index3", "Home", new { @class = "btn btn-google btn-user btn-block" })
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                        <a href="@Url.Action("Index3", "Home")" class="btn btn-google btn-user btn-block">
+                                            <i class="fab fa-google fa-fw"></i> Loooogin with Google
                                         </a>
                                         @Html.ActionLink("Loogin with Facebook", "Index3", "Home", new { @class = "btn btn-google btn-user btn-block" })
                                         <a href="index.html" class="btn btn-facebook btn-user btn-block">
@@ -79,15 +79,7 @@
 
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    @Scripts.Render("~/bundles/sbadmin2_js")
 
 </body>
 
