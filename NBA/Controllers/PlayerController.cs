@@ -1,4 +1,5 @@
 ﻿using LinqToExcel;
+using NBA.Data;
 using NBA.Models;
 using System;
 using System.Collections.Generic;
@@ -11,27 +12,30 @@ namespace NBA.Controllers
     public class PlayerController : Controller
     {
         protected ExcelQueryFactory excel;
-        public PlayerController()
-        {
-            excel = new ExcelQueryFactory("~/App_Data/players.xlsx");
-        }
 
         // GET: Players
         public ActionResult Index()
         {
-            
-            var Players = from c in excel.Worksheet<Player>()
-                                   select c;
-            return View(Players);
+            using (var context=new NBAContext())
+            {
+                var Players = from c in context.Players
+                              select c;
+                return View(Players);
+            }
+
         }
 
         // GET: Players/Details/5
         public ActionResult Details(int id)
         {
-            var Players = from c in excel.Worksheet<Player>()
+            using (var context = new NBAContext())
+            { 
+                var Players = from c in context.Players
                           where c.playerId == id
                           select c;
-            return View();
+                return View(Players);
+            }
+            
         }
 
         // GET: Players/Create

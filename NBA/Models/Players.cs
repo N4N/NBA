@@ -15,5 +15,7 @@ namespace NBA.Models
 
         public int peso { get; set; }
 
+        public virtual ICollection<Stat> Stats { get; set; }
+
     }
 }
